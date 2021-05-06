@@ -1,4 +1,4 @@
-import { AppBar, Grid, Toolbar, Button, Drawer, List, ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import { AppBar, Grid, Toolbar, Button, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography} from '@material-ui/core';
 import React,  { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, BrowserRouter} from 'react-router-dom';
 import icon from '../assets/icon.svg';
@@ -10,20 +10,9 @@ import MainDrawer from './Components/MainDrawer'
 
 const Hello = () => {
   return (
-    <div>
-      <div className="Hello">
-        <img width="200px" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        
-        <Link
-          to="/ chart"
-        >
-        Skibidi
-        </Link>
-      </div>
-    </div>
+    <Grid container>
+      <Typography>I guess this is the main screen</Typography>
+    </Grid>
   );
 };
 
@@ -38,7 +27,7 @@ export default function App() {
 
     <AppBar position="static">
       <Toolbar variant="dense">
-        <Grid container>
+        <Grid container spacing={2}>
           {/* Menu  */}
           <Grid item xs={2}>
             <MainDrawer />

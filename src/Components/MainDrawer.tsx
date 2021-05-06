@@ -1,6 +1,7 @@
 import React, {useState }  from 'react';
 import { Button, Drawer, List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import {Inbox, Mail, Home} from "@material-ui/icons";
+import {Home, ShowChart } from "@material-ui/icons";
+import { Link } from 'react-router-dom';
 
 
 const MainDrawer = () =>{
@@ -23,11 +24,26 @@ const MainDrawer = () =>{
       onKeyDown={toggleDrawer(false)}
     >
       <List>
+        <Link to="/">
+          <ListItem button key='home'>
+            <ListItemIcon> <Home /> </ListItemIcon>
+            <ListItemText primary="Home" />
+          </ListItem>
+        </Link>
 
-        <ListItem button key='home'>
-          <ListItemIcon> <Home /> </ListItemIcon>
-          <ListItemText primary="Home" />
-        </ListItem>
+        <Link to="/chart">
+          <ListItem button key='chart'>
+            <ListItemIcon> <ShowChart /> </ListItemIcon>
+            <ListItemText primary="Chart" />
+          </ListItem>
+        </Link>
+
+        <Link to="/">
+          <ListItem button key='third thing'>
+            <ListItemIcon> <ShowChart /> </ListItemIcon>
+            <ListItemText primary="Third thing" />
+          </ListItem>
+        </Link>
 
         {/* {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
